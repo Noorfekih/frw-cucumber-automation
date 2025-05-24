@@ -1,24 +1,21 @@
-@tag
-Feature: Title of your feature
-  I want to use this template for my feature file
+Feature: je verifie la page de register
+  En tant que utilisateur je souhaite m inscrire au site Mercury
 
-  @tag1
-  Scenario: Title of your scenario
-    Given I want to write a step with precondition
-    And some other precondition
-    When I complete action
-    And some other action
-    And yet another action
-    Then I validate the outcomes
-    And check more outcomes
-
-  @tag2
-  Scenario Outline: Title of your scenario outline
-    Given I want to write a step with <name>
-    When I check for the <value> in step
-    Then I verify the <status> in step
-
-    Examples: 
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
+  @register
+  Scenario: je verifie la page de register
+    Given je me connecte sur l application Mercury
+    When je clique sur le lien REGISTER
+    When je saisi le Firstname "nour"
+    And je saisie le Lastname "fekih"
+    And je saisie le Phone "58366880"
+    And je saisie le Email "nour22@gmail.com"
+    And je saisie le Adress "bouhjar"
+    And je saisie le City "monastir"
+    And je saisie le State "monastir"
+    And je saisie le PostalCode 5015
+    And je saisie le Country "TUNISIA"
+    And je saisie le Username "nour"
+    And je saisie le Password d inscription "nour@22"
+    And je confirme le Password "nour@22"
+    And je clique sur le bouton Envoyer
+    Then je me redirige vers la page "Register sucess"
